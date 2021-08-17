@@ -40,10 +40,10 @@ public class Bot extends TelegramLongPollingBot {
     }
 
     public String getBotUsername() {
-        return "@chifek_covid_bot";
+        return "@name_of_bot";
     }
 
     public String getBotToken() {
-        return "1432048482:AAFFRxpC8e_JFrVat0Cxl4HvYspnprFB41Q";
+        return "access_token";
     }
 }
