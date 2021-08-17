@@ -1,8 +1,8 @@
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
-import org.telegram.telegrambots.meta.api.objects.ChatPhoto;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
+import io.github.cdimascio.dotenv.Dotenv;
 
 public class Bot extends TelegramLongPollingBot {
 
@@ -40,10 +40,12 @@ public class Bot extends TelegramLongPollingBot {
     }
 
     public String getBotUsername() {
-        return "@name_of_bot";
+        Dotenv dotenv = Dotenv.load();
+        return dotenv.get("BOT_NAME");
     }
 
     public String getBotToken() {
-        return "access_token";
+        Dotenv dotenv = Dotenv.load();
+        return dotenv.get("BOT_SECRET");
     }
 }
