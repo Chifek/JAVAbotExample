@@ -1,3 +1,4 @@
+import org.jetbrains.annotations.NotNull;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
@@ -6,7 +7,7 @@ import io.github.cdimascio.dotenv.Dotenv;
 
 public class Bot extends TelegramLongPollingBot {
 
-    public void onUpdateReceived(Update update) {
+    public void onUpdateReceived(@NotNull Update update) {
         update.getUpdateId();
         String chat_id = String.valueOf(update.getMessage().getChatId());
         SendMessage sendMessage = new SendMessage().setChatId(chat_id);
